@@ -1,37 +1,73 @@
-## Welcome to GitHub Pages
+## Disaster Recovery Management
 
-You can use the [editor on GitHub](https://github.com/stephen-drexler/disaster-recovery-management/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+With the barrage of recent major disasters, including floods, earthquakes, tsunamis, tornados, and forest fires, the need for communication and organization of relief efforts becomes more apparent. Disaster Recovery Management is designed to help organize resources and volunteers to provide aid to neighbors near and far, who have been recently displaced by A major catastrophe.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Projects:
+- Common
+- Domain
+- Persistence 
+- Services
+- Web 
 
-### Markdown
+5 Tier solution architecture to maintain separation of concerns and insure future extendibility for a mid-sized project
+ 
+### Domain
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### User
+- UserId
+- Occupation
 
-```markdown
-Syntax highlighted code block
+#### Disaster
+- Id
+- Title
+- Summary
+- Context
+- Location
+- SmallImage
+- LargeImage
+- AltImageText
+- Expenses
+- Donations
+- Jobs
+- Supplies
+- Published
+- Deleted
 
-# Header 1
-## Header 2
-### Header 3
+#### Donation
+- Id
+- UserId
+- DisasterId
+- Amount
 
-- Bulleted
-- List
+#### Job
+- Id
+- Title
+- Description
 
-1. Numbered
-2. List
+#### DisasterJob
+- Id
+- DisasterId
+- JobId
+- Positions
+- Volunteers
 
-**Bold** and _Italic_ and `Code` text
+#### Volunteer
+- Id
+- UserId
+- DisasterJobId
 
-[Link](url) and ![Image](src)
-```
+#### Supply
+- Id
+- Name
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### DisasterSupply
+- Id
+- SupplyId
+- Quantity
+- Contributions
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/stephen-drexler/disaster-recovery-management/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### Contribution
+- Id
+- UserId
+- DisasterSupplyid
+- Quantity
