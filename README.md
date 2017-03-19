@@ -4,13 +4,15 @@ With the barrage of recent major disasters, including floods, earthquakes, tsuna
 
 ### Solution
 
-Disaster Recovery Management will contain a 5 Tier architecture to maintain separation of concerns and insure future extendibility.
+Disaster Recovery Management will consist of a 5 tier architecture to maintain separation of concerns and insure future extendibility.
  
 - Common
 - Domain
 - Persistence 
 - Services
 - Web 
+
+---
 
 ### Domain
 
@@ -29,9 +31,9 @@ Disaster Recovery Management will contain a 5 Tier architecture to maintain sepa
 - LargeImage (string)
 - AltImageText (string)
 - Expense (decimal)  
-- Contributions (HashSet<Contribution>)
-- Jobs (HashSet<VolunteerJob>)
-- Supplies (HashSet<DonateSupply>)
+- Contributions (HashSet&lt;Contribution&gt;)
+- Jobs (HashSet&lt;VolunteerJob&gt;)
+- Supplies (HashSet&lt;DonateSupply&gt;)
 - Published (bool)
 - Deleted (bool)
 
@@ -51,7 +53,7 @@ Disaster Recovery Management will contain a 5 Tier architecture to maintain sepa
 - JobId (int)
 - DisasterId (int)
 - Positions (int)
-- Volunteers (HashSet<Volunteer>)
+- Volunteers (HashSet&lt;Volunteer&gt;)
 
 #### Volunteer
 - Id (int)
@@ -67,7 +69,7 @@ Disaster Recovery Management will contain a 5 Tier architecture to maintain sepa
 - SupplyId (int)
 - DisasterId (string)
 - Quantity (int)
-- Donations (HashSet<Donation>)
+- Donations (HashSet&lt;Donation&gt;)
 
 #### Donation
 - Id (int)
