@@ -16,30 +16,33 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 
 ### Domain
 
-#### Identity (Microsoft.AspNet.Identity.EntityFramework.IdentityUser)
+#### ApplicationUser (Microsoft.AspNet.Identity.EntityFramework.IdentityUser)
 - Id (string)
 - . . .
+- UserName (string)
 - Occupation (string)
 
 #### Disaster
 - Id (int)
 - Title (string)
 - Summary (string)
-- Context (string)
+- Content (string)
 - Location (string)
-- SmallImage (string)
-- LargeImage (string)
+- SmallImageUrl (string)
+- LargeImageUrl (string)
 - AltImageText (string)
-- Expense (decimal)  
-- Contributions (HashSet&lt;Contribution&gt;)
-- Jobs (HashSet&lt;VolunteerJob&gt;)
-- Supplies (HashSet&lt;DonateSupply&gt;)
+- EstimatedExpense (decimal)  
+- Contributions (ICollection&lt;Contribution&gt;)
+- Jobs (ICollection&lt;VolunteerJob&gt;)
+- Volunteers (ICollection&lt;Volunteer&gt;)
+- Supplies (ICollection&lt;DonateSupply&gt;)
+- Donations (ICollection&lt;Donation&gt;)
 - Published (bool)
 - Deleted (bool)
 
 #### Contribution
 - Id (int)
-- IdentityId (string)
+- UserId (string)
 - DisasterId (int)
 - Amount (decimal)
 
@@ -53,12 +56,13 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 - JobId (int)
 - DisasterId (int)
 - Positions (int)
-- Volunteers (HashSet&lt;Volunteer&gt;)
+- Volunteers (ICollection&lt;Volunteer&gt;)
 
 #### Volunteer
 - Id (int)
-- IdentityId (string)
-- DisasterJobId (int)
+- UserId (string)
+- DisasterId (int)
+- VolunteerJobId (int)
 
 #### Supply
 - Id (int)
@@ -69,10 +73,11 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 - SupplyId (int)
 - DisasterId (string)
 - Quantity (int)
-- Donations (HashSet&lt;Donation&gt;)
+- Donations (ICollection&lt;Donation&gt;)
 
 #### Donation
 - Id (int)
-- IdentityId (string)
-- DonateSupplyid (int)
+- UserId (string)
+- DisasterId (string)
+- DonateSupplyId (int)
 - Quantity (int)

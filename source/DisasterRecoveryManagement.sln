@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VM.DisasterRecovery.Web", "VM.DisasterRecovery.Web\VM.DisasterRecovery.Web.csproj", "{9E199B64-733C-4A3F-A7D5-A378CAA614EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VM.DisasterRecovery.Domain", "VM.DisasterRecovery.Domain\VM.DisasterRecovery.Domain.csproj", "{DCA00B9B-49D3-4B5C-BFE9-ACF65AA51EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VM.DisasterRecovery.Services", "VM.DisasterRecovery.Services\VM.DisasterRecovery.Services.csproj", "{2EA03F8F-D39B-41F6-9FAD-56A89C115A16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VM.DisasterRecovery.Common", "VM.DisasterRecovery.Common\VM.DisasterRecovery.Common.csproj", "{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VM.DisasterRecovery.Persistence", "VM.DisasterRecovery.Persistence\VM.DisasterRecovery.Persistence.csproj", "{DA140B24-28DE-4E5D-971D-C16A45A74A6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E199B64-733C-4A3F-A7D5-A378CAA614EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E199B64-733C-4A3F-A7D5-A378CAA614EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E199B64-733C-4A3F-A7D5-A378CAA614EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E199B64-733C-4A3F-A7D5-A378CAA614EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA00B9B-49D3-4B5C-BFE9-ACF65AA51EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA00B9B-49D3-4B5C-BFE9-ACF65AA51EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA00B9B-49D3-4B5C-BFE9-ACF65AA51EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA00B9B-49D3-4B5C-BFE9-ACF65AA51EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA03F8F-D39B-41F6-9FAD-56A89C115A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA03F8F-D39B-41F6-9FAD-56A89C115A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA03F8F-D39B-41F6-9FAD-56A89C115A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA03F8F-D39B-41F6-9FAD-56A89C115A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA140B24-28DE-4E5D-971D-C16A45A74A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA140B24-28DE-4E5D-971D-C16A45A74A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA140B24-28DE-4E5D-971D-C16A45A74A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA140B24-28DE-4E5D-971D-C16A45A74A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
