@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using VM.DisasterRecovery.Web.Models;
+using VM.DisasterRecovery.Domain.Models;
 
-namespace VM.DisasterRecovery.Web.Data
+namespace VM.DisasterRecovery.Persistence
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class IdentityContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+        public IdentityContext() { }
+
+        public IdentityContext(DbContextOptions<IdentityContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

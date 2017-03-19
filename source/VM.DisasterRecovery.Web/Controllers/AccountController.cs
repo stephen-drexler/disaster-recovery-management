@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using VM.DisasterRecovery.Domain.Models;
 using VM.DisasterRecovery.Web.Models;
 using VM.DisasterRecovery.Web.Models.AccountViewModels;
 using VM.DisasterRecovery.Web.Services;

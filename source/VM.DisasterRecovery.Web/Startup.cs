@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using VM.DisasterRecovery.Web.Data;
-using VM.DisasterRecovery.Web.Models;
+using VM.DisasterRecovery.Domain.Models;
+using VM.DisasterRecovery.Persistence;
 using VM.DisasterRecovery.Web.Services;
 
 namespace VM.DisasterRecovery.Web
@@ -27,7 +27,7 @@ namespace VM.DisasterRecovery.Web
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
+                builder.AddUserSecrets<Startup>();
 
                 // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
                 builder.AddApplicationInsightsSettings(developerMode: true);
@@ -45,12 +45,15 @@ namespace VM.DisasterRecovery.Web
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<IdentityContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DisasterRecoveryConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddDbContext<DisasterRecoveryContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DisasterRecoveryConnection")));
 
             services.AddMvc();
 
@@ -65,7 +68,7 @@ namespace VM.DisasterRecovery.Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseApplicationInsightsRequestTelemetry();
+            //app.UseApplicationInsightsRequestTelemetry();
 
             if (env.IsDevelopment())
             {
@@ -78,7 +81,7 @@ namespace VM.DisasterRecovery.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseApplicationInsightsExceptionTelemetry();
+            //app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
 
