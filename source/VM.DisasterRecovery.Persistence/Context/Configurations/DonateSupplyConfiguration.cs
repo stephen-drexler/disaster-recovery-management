@@ -14,7 +14,7 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
                 .IsRequired();
         }
 
-        public static DonateSupplyConfiguration Create()
+        public static DonateSupplyConfiguration Initialize()
         {
             return new DonateSupplyConfiguration();
         }

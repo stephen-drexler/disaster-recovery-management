@@ -31,5 +31,46 @@ namespace VM.DisasterRecovery.Persistence.Properties {
                 return ((string)(this["ConnectionStringName"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Requested changes have been saved.")]
+        public string UnitOfWorkCommitChangesSuccess {
+            get {
+                return ((string)(this["UnitOfWorkCommitChangesSuccess"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Unable able to save changes! Please try again later.")]
+        public string UnitOfWorkCommitChangesFailed {
+            get {
+                return ((string)(this["UnitOfWorkCommitChangesFailed"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Unable able to save changes due to one or more records being in an invalid state." +
+            "")]
+        public string UnitOfWorkCommitChangesValidationError {
+            get {
+                return ((string)(this["UnitOfWorkCommitChangesValidationError"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Unable able to save changes due to one or more of the records have already have m" +
+            "odified.")]
+        public string UnitOfWorkCommitChangesConcurrencyError {
+            get {
+                return ((string)(this["UnitOfWorkCommitChangesConcurrencyError"]));
+            }
+            set {
+                this["UnitOfWorkCommitChangesConcurrencyError"] = value;
+            }
+        }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Linq.Expressions;
+using VM.DisasterRecovery.Common.Models;
 using VM.DisasterRecovery.Domain.Contracts;
 using VM.DisasterRecovery.Persistence.Context;
 
@@ -39,21 +41,33 @@ namespace VM.DisasterRecovery.Persistence.Repositories
 
         public virtual void Add(TEntity entity)
         {
+            if (null == entity)
+                throw new ArgumentNullException($"{typeof(TEntity).FullName}");
+
             DataSet.Add(entity);
         }
 
         public virtual void AddRange(IEnumerable<TEntity> entities)
         {
+            if (null == entities)
+                throw new ArgumentNullException($"{typeof(IEnumerable<TEntity>).FullName}");
+
             DataSet.AddRange(entities);
         }
 
         public virtual void Remove(TEntity entity)
         {
+            if (null == entity)
+                throw new ArgumentNullException($"{typeof(TEntity).FullName}");
+
             DataSet.Remove(entity);
         }
 
         public virtual void RemoveRange(IEnumerable<TEntity> entities)
         {
+            if (null == entities)
+                throw new ArgumentNullException($"{typeof(IEnumerable<TEntity>).FullName}");
+
             DataSet.RemoveRange(entities);
         }
     }

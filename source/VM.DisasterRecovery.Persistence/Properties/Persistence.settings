@@ -1,9 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VM.DisasterRecovery.Persistence" GeneratedClassName="Persistence">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VM.DisasterRecovery.Persistence.Properties" GeneratedClassName="Persistence">
   <Profiles />
   <Settings>
     <Setting Name="ConnectionStringName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">DisasterRecoveryConnection</Value>
+    </Setting>
+    <Setting Name="UnitOfWorkCommitChangesSuccess" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Requested changes have been saved.</Value>
+    </Setting>
+    <Setting Name="UnitOfWorkCommitChangesFailed" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Unable able to save changes! Please try again later.</Value>
+    </Setting>
+    <Setting Name="UnitOfWorkCommitChangesValidationError" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Unable able to save changes due to one or more records being in an invalid state.</Value>
+    </Setting>
+    <Setting Name="UnitOfWorkCommitChangesConcurrencyError" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Unable able to save changes due to one or more of the records have already have modified.</Value>
     </Setting>
   </Settings>
 </SettingsFile>

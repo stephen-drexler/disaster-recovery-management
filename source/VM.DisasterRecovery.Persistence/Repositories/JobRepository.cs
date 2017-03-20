@@ -7,8 +7,13 @@ namespace VM.DisasterRecovery.Persistence.Repositories
 {
     public class JobRepository : Repository<Job>, IJobRepository
     {
-        public JobRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context)
+        private JobRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context)
         {
+        }
+
+        public static IJobRepository Initialize(IUnitOfWork unitOfWork)
+        {
+            return new JobRepository(unitOfWork);
         }
     }
 }

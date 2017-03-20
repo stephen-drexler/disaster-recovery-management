@@ -13,7 +13,7 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
                 .HasMaxLength(255);
         }
 
-        public static SupplyConfiguration Create()
+        public static SupplyConfiguration Initialize()
         {
             return new SupplyConfiguration();
         }

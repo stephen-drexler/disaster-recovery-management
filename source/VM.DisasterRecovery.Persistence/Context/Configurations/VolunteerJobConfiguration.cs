@@ -14,7 +14,7 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
                 .IsRequired();
         }
 
-        public static VolunteerJobConfiguration Create()
+        public static VolunteerJobConfiguration Initialize()
         {
             return new VolunteerJobConfiguration();
         }

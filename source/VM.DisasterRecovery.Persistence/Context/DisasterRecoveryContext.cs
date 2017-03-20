@@ -31,21 +31,21 @@ namespace VM.DisasterRecovery.Persistence.Context
         public DisasterRecoveryContext(string connectionStringName)
             : base(connectionStringName, throwIfV1Schema: false) { }
 
-        public static DisasterRecoveryContext Create()
+        public static DisasterRecoveryContext Initialize()
         {
             return new DisasterRecoveryContext();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(ContributionConfiguration.Create());
-            modelBuilder.Configurations.Add(DisasterConfiguration.Create());
-            modelBuilder.Configurations.Add(DonateSupplyConfiguration.Create());
-            modelBuilder.Configurations.Add(DonationConfiguration.Create());
-            modelBuilder.Configurations.Add(JobConfiguration.Create());
-            modelBuilder.Configurations.Add(SupplyConfiguration.Create());
-            modelBuilder.Configurations.Add(VolunteerConfiguration.Create());
-            modelBuilder.Configurations.Add(VolunteerJobConfiguration.Create());
+            modelBuilder.Configurations.Add(ContributionConfiguration.Initialize());
+            modelBuilder.Configurations.Add(DisasterConfiguration.Initialize());
+            modelBuilder.Configurations.Add(DonateSupplyConfiguration.Initialize());
+            modelBuilder.Configurations.Add(DonationConfiguration.Initialize());
+            modelBuilder.Configurations.Add(JobConfiguration.Initialize());
+            modelBuilder.Configurations.Add(SupplyConfiguration.Initialize());
+            modelBuilder.Configurations.Add(VolunteerConfiguration.Initialize());
+            modelBuilder.Configurations.Add(VolunteerJobConfiguration.Initialize());
           
             base.OnModelCreating(modelBuilder);
         }

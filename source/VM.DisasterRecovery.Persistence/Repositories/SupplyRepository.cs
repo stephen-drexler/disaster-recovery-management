@@ -8,5 +8,10 @@ namespace VM.DisasterRecovery.Persistence.Repositories
     public class SupplyRepository : Repository<Supply>, ISupplyRepository
     {
         public SupplyRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context) { }
+
+        public static ISupplyRepository Initialize(IUnitOfWork unitOfWork)
+        {
+            return new SupplyRepository(unitOfWork);
+        }
     }
 }

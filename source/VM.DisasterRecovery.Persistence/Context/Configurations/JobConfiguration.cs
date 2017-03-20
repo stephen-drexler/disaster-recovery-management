@@ -16,7 +16,7 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
                .HasMaxLength(5000);
         }
 
-        public static JobConfiguration Create()
+        public static JobConfiguration Initialize()
         {
             return new JobConfiguration();
         }

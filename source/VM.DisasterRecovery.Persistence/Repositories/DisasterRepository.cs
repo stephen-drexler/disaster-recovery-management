@@ -7,8 +7,13 @@ namespace VM.DisasterRecovery.Persistence.Repositories
 {
     public class DisasterRepository : Repository<Disaster>, IDisasterRepository
     {
-        public DisasterRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context)
+        private DisasterRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context)
         {
+        }
+
+        public static IDisasterRepository Initialize(IUnitOfWork unitOfWork)
+        {
+            return new DisasterRepository(unitOfWork);
         }
     }
 }

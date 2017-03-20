@@ -57,7 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDisasterRepository.cs" />
+    <Compile Include="Contracts\IJobRepository.cs" />
     <Compile Include="Contracts\IRepository.cs" />
+    <Compile Include="Contracts\ISupplyRepository.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Contribution.cs" />
     <Compile Include="Models\Disaster.cs" />

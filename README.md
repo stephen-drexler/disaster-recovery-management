@@ -16,6 +16,13 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 
 ---
 
+### Common
+
+#### Models 
+- OperationResult
+
+---
+
 ### Domain
 
 #### ApplicationUser (Microsoft.AspNet.Identity.EntityFramework.IdentityUser)

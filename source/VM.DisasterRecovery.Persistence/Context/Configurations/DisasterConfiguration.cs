@@ -52,7 +52,7 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
              .WillCascadeOnDelete(false);
         }
 
-        public static DisasterConfiguration Create()
+        public static DisasterConfiguration Initialize()
         {
             return new DisasterConfiguration();
         }
