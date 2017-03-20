@@ -2,6 +2,8 @@
 
 With the barrage of recent major disasters, including floods, earthquakes, tsunamis, tornados, and forest fires, the need for communication and organization of relief efforts becomes more apparent. Disaster Recovery Management is designed to help organize resources and volunteers to provide aid to neighbors near and far, who have been recently displaced by A major catastrophe.
 
+---
+
 ### Solution
 
 Disaster Recovery Management will consist of a 5 tier architecture to maintain separation of concerns and insure future extendibility.
@@ -22,6 +24,12 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 - UserName (string)
 - Occupation (string)
 
+#### Contribution
+- Id (int)
+- UserId (string)
+- DisasterId (int)
+- Amount (decimal)
+
 #### Disaster
 - Id (int)
 - Title (string)
@@ -40,44 +48,71 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 - Published (bool)
 - Deleted (bool)
 
-#### Contribution
+#### DonateSupply
+- SupplyId (int)
+- Supply (Supply)
+- DisasterId (string)
+- Disaster (Disaster)
+- Quantity (int)
+
+#### Donation
 - Id (int)
 - UserId (string)
-- DisasterId (int)
-- Amount (decimal)
+- User (ApplicationUser)
+- SupplyId (int)
+- Supply (Supply)
+- DisasterId (string)
+- Disaster (Disaster)
+- Quantity (int)
 
 #### Job
 - Id (int)
 - Title (string)
 - Description (string)
 
-#### VolunteerJob
-- Id (int)
-- JobId (int)
-- DisasterId (int)
-- Positions (int)
-- Volunteers (ICollection&lt;Volunteer&gt;)
-
-#### Volunteer
-- Id (int)
-- UserId (string)
-- DisasterId (int)
-- VolunteerJobId (int)
-
 #### Supply
 - Id (int)
 - Name (string)
 
-#### DonateSupply
-- Id (int)
-- SupplyId (int)
-- DisasterId (string)
-- Quantity (int)
-- Donations (ICollection&lt;Donation&gt;)
-
-#### Donation
+#### Volunteer
 - Id (int)
 - UserId (string)
-- DisasterId (string)
-- DonateSupplyId (int)
-- Quantity (int)
+- User (ApplicationUser)
+- JobId (int)
+- Job (Job)
+- DisasterId (int)
+- Disaster (Disaster)
+
+#### VolunteerJob
+- JobId (int)
+- Job (Job)
+- DisasterId (int)
+- Disaster (Disaster)
+- Positions (int)
+
+---
+
+### Presistence
+
+#### Context
+- Configurations
+	- ContributionConfiguration (EntityTypeConfiguration&lt;Contribution&gt;)
+	- DisasterConfiguration (EntityTypeConfiguration&lt;Disaster&gt;)
+	- DonateSupplyConfiguration (EntityTypeConfiguration&lt;DonateSupply&gt;)
+	- DonationConfiguration (EntityTypeConfiguration&lt;Donation&gt;)
+	- JobConfiguration (EntityTypeConfiguration&lt;Job&gt;)
+	- SupplyConfiguration (EntityTypeConfiguration&lt;Supply&gt;)
+	- VolunteerConfiguration (EntityTypeConfiguration&lt;Volunteer&gt;)
+	- VolunteerJobConfiguration (EntityTypeConfiguration&lt;VolunteerJob&gt;)
+- DisasterRecoveryContext (IdentityDbContext&lt;ApplicationUser&gt;)
+
+#### Repositories
+- DisasterRepository (Repository, IDisasterRepository, IRepository)
+- JobRepository (Repository, IJobRepository, IRepository)
+- SupplyRepository (Repository, ISupplyRepository, IRepository)
+- Repository (IRepository)
+
+#### UnitOfWork (IUnitOfWork)
+
+
+

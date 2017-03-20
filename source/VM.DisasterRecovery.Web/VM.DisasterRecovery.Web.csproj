@@ -202,7 +202,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,10 @@
     <ProjectReference Include="..\VM.DisasterRecovery.Domain\VM.DisasterRecovery.Domain.csproj">
       <Project>{dca00b9b-49d3-4b5c-bfe9-acf65aa51ea7}</Project>
       <Name>VM.DisasterRecovery.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VM.DisasterRecovery.Persistence\VM.DisasterRecovery.Persistence.csproj">
+      <Project>{da140b24-28de-4e5d-971d-c16a45a74a6f}</Project>
+      <Name>VM.DisasterRecovery.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\VM.DisasterRecovery.Services\VM.DisasterRecovery.Services.csproj">
       <Project>{2ea03f8f-d39b-41f6-9fad-56a89c115a16}</Project>

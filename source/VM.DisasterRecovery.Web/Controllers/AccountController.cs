@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using VM.DisasterRecovery.Domain.Models;
 using VM.DisasterRecovery.Web.Models;
 
 namespace VM.DisasterRecovery.Web.Controllers

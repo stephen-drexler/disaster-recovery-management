@@ -30,7 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +57,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\Configurations\ContributionConfiguration.cs" />
+    <Compile Include="Context\Configurations\DisasterConfiguration.cs" />
+    <Compile Include="Context\Configurations\DonateSupplyConfiguration.cs" />
+    <Compile Include="Context\Configurations\DonationConfiguration.cs" />
+    <Compile Include="Context\Configurations\JobConfiguration.cs" />
+    <Compile Include="Context\Configurations\SupplyConfiguration.cs" />
+    <Compile Include="Context\Configurations\VolunteerConfiguration.cs" />
+    <Compile Include="Context\Configurations\VolunteerJobConfiguration.cs" />
+    <Compile Include="Context\DisasterRecoveryContext.cs" />
+    <Compile Include="Migrations\201703200645384_InitializeDatabase.cs" />
+    <Compile Include="Migrations\201703200645384_InitializeDatabase.Designer.cs">
+      <DependentUpon>201703200645384_InitializeDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\Persistence.cs" />
+    <Compile Include="Properties\Persistence.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Persistence.settings</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VM.DisasterRecovery.Common\VM.DisasterRecovery.Common.csproj">
@@ -51,6 +89,19 @@
       <Project>{dca00b9b-49d3-4b5c-bfe9-acf65aa51ea7}</Project>
       <Name>VM.DisasterRecovery.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Persistence.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Persistence.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703200645384_InitializeDatabase.resx">
+      <DependentUpon>201703200645384_InitializeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
