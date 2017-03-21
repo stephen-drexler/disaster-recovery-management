@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionStringName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">DisasterRecoveryConnection</Value>
+      <Value Profile="(Default)">DisasterRecoveryManagement</Value>
     </Setting>
     <Setting Name="UnitOfWorkCommitChangesSuccess" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Requested changes have been saved.</Value>
@@ -16,6 +16,9 @@
     </Setting>
     <Setting Name="UnitOfWorkCommitChangesConcurrencyError" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Unable able to save changes due to one or more of the records have already have modified.</Value>
+    </Setting>
+    <Setting Name="UnitOfWorkCommitChangesError" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Unable able to save changes! Please try again later.</Value>
     </Setting>
   </Settings>
 </SettingsFile>

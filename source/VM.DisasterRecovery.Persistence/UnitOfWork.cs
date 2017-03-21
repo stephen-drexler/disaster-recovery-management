@@ -17,7 +17,7 @@ namespace VM.DisasterRecovery.Persistence
 
         private static string CommitChangesConcurrencyError => Properties.Persistence.Default.UnitOfWorkCommitChangesConcurrencyError;
 
-        private static string CommitChangesFailed => Properties.Persistence.Default.UnitOfWorkCommitChangesFailed;
+        private static string CommitChangesFailed => Properties.Persistence.Default.UnitOfWorkCommitChangesError;
 
         public UnitOfWork() : this(DisasterRecoveryContext.Initialize()) { }
 

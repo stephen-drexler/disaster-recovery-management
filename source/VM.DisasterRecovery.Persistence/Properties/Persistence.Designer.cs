@@ -25,7 +25,7 @@ namespace VM.DisasterRecovery.Persistence.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DisasterRecoveryConnection")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DisasterRecoveryManagement")]
         public string ConnectionStringName {
             get {
                 return ((string)(this["ConnectionStringName"]));
@@ -67,6 +67,15 @@ namespace VM.DisasterRecovery.Persistence.Properties {
         public string UnitOfWorkCommitChangesConcurrencyError {
             get {
                 return ((string)(this["UnitOfWorkCommitChangesConcurrencyError"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Unable able to save changes! Please try again later.")]
+        public string UnitOfWorkCommitChangesError {
+            get {
+                return ((string)(this["UnitOfWorkCommitChangesError"]));
             }
         }
     }
