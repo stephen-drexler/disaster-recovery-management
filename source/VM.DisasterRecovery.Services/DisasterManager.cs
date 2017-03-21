@@ -11,27 +11,30 @@ using VM.DisasterRecovery.Persistence.Repositories;
 
 namespace VM.DisasterRecovery.Services
 {
-    public class DisasterManager
+    public class DisasterManager : Manager<Disaster, DisasterRepository>, IDisasterManager
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IDisasterRepository _disasterRepository;
-
         public DisasterManager(IUnitOfWork unitOfWork) 
             : this(unitOfWork, DisasterRepository.Initialize(unitOfWork)) { }
 
         public DisasterManager(IUnitOfWork unitOfWork, IDisasterRepository disasterRepository)
+            : base(unitOfWork, disasterRepository){ }
+
+        public OperationResult Publish(Disaster disaster)
         {
-            _unitOfWork = unitOfWork;
-            _disasterRepository = disasterRepository;
+            disaster.Publish();
+            return UnitOfWork.Commit();
         }
 
-        public OperationResult Create(Disaster disaster)
+        public OperationResult UnPublish(Disaster disaster)
         {
-            throw new NotImplementedException();
-            if (null == disaster)
-                return OperationResult.Initialize();
+            disaster.UnPublish();
+            return UnitOfWork.Commit();
+        }
 
-            return OperationResult.Initialize();
+        public override OperationResult Delete(Disaster disaster)
+        {
+            disaster.Delete();
+            return base.UnitOfWork.Commit(); ;
         }
     }
 }

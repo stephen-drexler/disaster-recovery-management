@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Net.NetworkInformation;
+using VM.DisasterRecovery.Domain.Contracts;
 
 namespace VM.DisasterRecovery.Domain.Models
 {
-    public class Disaster
+    public class Disaster : IUpdate<Disaster>, IPublish<Disaster>, IDelete<Disaster>, IUniqueIdentity
     {
         public int Id { get; set; }
 
@@ -43,6 +45,18 @@ namespace VM.DisasterRecovery.Domain.Models
             Volunteers = new List<Volunteer>();
             Supplies = new List<DonateSupply>();
             Donations = new List<Donation>();
+        }
+
+        public void Update(Disaster disaster)
+        {
+            Title = disaster.Title;
+            Summary = disaster.Summary;
+            Content = disaster.Content;
+            Location = disaster.Location;
+            SmallImageUrl = disaster.SmallImageUrl;
+            LargeImageUrl = disaster.LargeImageUrl;
+            AlternateImageText = disaster.AlternateImageText;
+            EstimatedExpense = disaster.EstimatedExpense;
         }
 
         public void Publish()

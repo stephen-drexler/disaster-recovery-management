@@ -37,14 +37,17 @@ namespace VM.DisasterRecovery.Persistence
             }
             catch (DbEntityValidationException exception)
             {
+                //TODO: Add Logging - Debug
                 result = this.HandleDatabaseUpdateException(CommitChangesValidationError, exception);
             }
             catch (DbUpdateConcurrencyException exception)
             {
+                //TODO: Add Logging - Warn
                 result = this.HandleDatabaseUpdateException(CommitChangesConcurrencyError, exception);
             }
             catch (DbUpdateException exception)
             {
+                //TODO: Add Logging - Error
                 result = this.HandleDatabaseUpdateException(CommitChangesFailed, exception);
             }
             

@@ -11,7 +11,7 @@ namespace VM.DisasterRecovery.Persistence.Repositories
         {
         }
 
-        public static IDisasterRepository Initialize(IUnitOfWork unitOfWork)
+        public static DisasterRepository Initialize(IUnitOfWork unitOfWork)
         {
             return new DisasterRepository(unitOfWork);
         }

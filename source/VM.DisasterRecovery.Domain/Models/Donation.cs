@@ -1,7 +1,9 @@
 ﻿
+using VM.DisasterRecovery.Domain.Contracts;
+
 namespace VM.DisasterRecovery.Domain.Models
 {
-    public class Donation
+    public class Donation : IUniqueIdentity
     {
         public int Id { get; set; }
 

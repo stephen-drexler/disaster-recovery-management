@@ -57,22 +57,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDisasterManager.cs" />
     <Compile Include="Contracts\IDisasterRepository.cs" />
+    <Compile Include="Contracts\IJobManager.cs" />
     <Compile Include="Contracts\IJobRepository.cs" />
+    <Compile Include="Contracts\IManager.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\ISupplyRepository.cs" />
+    <Compile Include="Contracts\ISuppyManager.cs" />
+    <Compile Include="Contracts\IUniqueIdentity.cs" />
+    <Compile Include="Contracts\IUpdate.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Contribution.cs" />
     <Compile Include="Models\Disaster.cs" />
     <Compile Include="Models\DonateSupply.cs" />
     <Compile Include="Models\Donation.cs" />
+    <Compile Include="Contracts\IDelete.cs" />
+    <Compile Include="Contracts\IPublish.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Supply.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\VolunteerJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VM.DisasterRecovery.Common\VM.DisasterRecovery.Common.csproj">
+      <Project>{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}</Project>
+      <Name>VM.DisasterRecovery.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

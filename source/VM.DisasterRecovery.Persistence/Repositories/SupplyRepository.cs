@@ -9,7 +9,7 @@ namespace VM.DisasterRecovery.Persistence.Repositories
     {
         public SupplyRepository(IUnitOfWork unitOfWork) : base(unitOfWork.Context) { }
 
-        public static ISupplyRepository Initialize(IUnitOfWork unitOfWork)
+        public static SupplyRepository Initialize(IUnitOfWork unitOfWork)
         {
             return new SupplyRepository(unitOfWork);
         }

@@ -121,5 +121,11 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 
 #### UnitOfWork (IUnitOfWork)
 
+---
 
+### Services
+
+- DisasterManager (Manager, ISupplyManager, IManager)
+- JobManager (Manager, ISupplyManager, IManager)
+- SupplyManager (Manager, ISupplyManager, IManager)
 
