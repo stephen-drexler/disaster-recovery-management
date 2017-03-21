@@ -60,16 +60,13 @@ namespace VM.DisasterRecovery.Persistence.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Unable able to save changes due to one or more of the records have already have m" +
             "odified.")]
         public string UnitOfWorkCommitChangesConcurrencyError {
             get {
                 return ((string)(this["UnitOfWorkCommitChangesConcurrencyError"]));
-            }
-            set {
-                this["UnitOfWorkCommitChangesConcurrencyError"] = value;
             }
         }
     }

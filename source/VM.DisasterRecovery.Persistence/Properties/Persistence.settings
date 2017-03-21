@@ -14,7 +14,7 @@
     <Setting Name="UnitOfWorkCommitChangesValidationError" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Unable able to save changes due to one or more records being in an invalid state.</Value>
     </Setting>
-    <Setting Name="UnitOfWorkCommitChangesConcurrencyError" Type="System.String" Scope="User">
+    <Setting Name="UnitOfWorkCommitChangesConcurrencyError" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Unable able to save changes due to one or more of the records have already have modified.</Value>
     </Setting>
   </Settings>
