@@ -19,6 +19,11 @@ namespace VM.DisasterRecovery.Services
         public DisasterManager(IUnitOfWork unitOfWork, IDisasterRepository disasterRepository)
             : base(unitOfWork, disasterRepository){ }
 
+        public static DisasterManager Initialize(IUnitOfWork unitOfWork)
+        {
+            return new DisasterManager(unitOfWork);
+        }
+
         public OperationResult Publish(Disaster disaster)
         {
             disaster.Publish();

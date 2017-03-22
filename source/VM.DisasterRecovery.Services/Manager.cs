@@ -21,6 +21,16 @@ namespace VM.DisasterRecovery.Services
             Repository = (TRepository)repository;
         }
 
+        public virtual IEnumerable<TEntity> GellAll()
+        {
+            return Repository.GetAll();
+        }
+
+        public virtual TEntity Get(int id)
+        {
+            return Repository.Get(id);
+        }
+
         public virtual OperationResult Create(TEntity entity)
         {
             Repository.Add(entity);
@@ -38,6 +48,11 @@ namespace VM.DisasterRecovery.Services
             var original = Repository.Get(entity.Id);
             original.Update(entity);
             return UnitOfWork.Commit();
+        }
+
+        public void Dispose()
+        {
+            UnitOfWork?.Dispose();
         }
     }
 }

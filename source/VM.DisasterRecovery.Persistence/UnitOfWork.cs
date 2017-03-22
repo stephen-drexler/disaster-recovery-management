@@ -23,6 +23,11 @@ namespace VM.DisasterRecovery.Persistence
 
         public UnitOfWork(DisasterRecoveryContext context) : base(context) { }
 
+        public static UnitOfWork Initialize()
+        {
+            return new UnitOfWork();
+        }
+
         public override OperationResult Commit()
         {
             OperationResult result;

@@ -10,7 +10,7 @@ using VM.DisasterRecovery.Persistence.Context;
 
 namespace VM.DisasterRecovery.Persistence.Repositories
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
     {
         protected readonly DbSet<TEntity> DataSet;
 
@@ -21,12 +21,12 @@ namespace VM.DisasterRecovery.Persistence.Repositories
 
         public virtual TEntity Get(int id)
         {
-            return DataSet.Find(id);
+            return DataSet?.Find(id) ?? new TEntity();
         }
 
         public virtual IEnumerable<TEntity> GetAll()
         {
-            return DataSet.ToList();
+           return DataSet?.ToList() ?? new List<TEntity>();
         }
 
         public virtual IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)

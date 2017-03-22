@@ -19,6 +19,10 @@ namespace VM.DisasterRecovery.Persistence.Context.Configurations
             Property(d => d.Content)
                .IsRequired();
 
+            Property(d => d.Location)
+              .IsRequired()
+               .HasMaxLength(255);
+
             Property(d => d.EstimatedExpense)
               .IsRequired();
 

@@ -195,6 +195,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Areas\Management\Controllers\DisasterController.cs" />
+    <Compile Include="Areas\Management\Models\DisasterViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -218,6 +221,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Management\Views\web.config" />
+    <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Management\Views\Disaster\Create.cshtml" />
+    <Content Include="Areas\Management\Views\Disaster\Delete.cshtml" />
+    <Content Include="Areas\Management\Views\Disaster\Details.cshtml" />
+    <Content Include="Areas\Management\Views\Disaster\Edit.cshtml" />
+    <Content Include="Areas\Management\Views\Disaster\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -277,6 +288,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VM.DisasterRecovery.Common\VM.DisasterRecovery.Common.csproj">
+      <Project>{EB652A43-53EB-4EB1-AF2C-0E6EC95C9F49}</Project>
+      <Name>VM.DisasterRecovery.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VM.DisasterRecovery.Domain\VM.DisasterRecovery.Domain.csproj">
       <Project>{dca00b9b-49d3-4b5c-bfe9-acf65aa51ea7}</Project>
       <Name>VM.DisasterRecovery.Domain</Name>

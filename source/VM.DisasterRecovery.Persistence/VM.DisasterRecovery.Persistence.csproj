@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201703200645384_InitializeDatabase.Designer.cs">
       <DependentUpon>201703200645384_InitializeDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703212327250_Added-Disaster-Location-Contraints.cs" />
+    <Compile Include="Migrations\201703212327250_Added-Disaster-Location-Contraints.Designer.cs">
+      <DependentUpon>201703212327250_Added-Disaster-Location-Contraints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\Persistence.cs" />
     <Compile Include="Properties\Persistence.Designer.cs">
@@ -106,6 +110,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703200645384_InitializeDatabase.resx">
       <DependentUpon>201703200645384_InitializeDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703212327250_Added-Disaster-Location-Contraints.resx">
+      <DependentUpon>201703212327250_Added-Disaster-Location-Contraints.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
