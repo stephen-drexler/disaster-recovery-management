@@ -114,10 +114,11 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 - DisasterRecoveryContext (IdentityDbContext&lt;ApplicationUser&gt;)
 
 #### Repositories
+- Abstract
+	- Repository (IRepository)
 - DisasterRepository (Repository, IDisasterRepository, IRepository)
 - JobRepository (Repository, IJobRepository, IRepository)
 - SupplyRepository (Repository, ISupplyRepository, IRepository)
-- Repository (IRepository)
 
 #### UnitOfWork (IUnitOfWork)
 
@@ -125,6 +126,9 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 
 ### Services
 
+#### Managers
+- Abstract
+	- Manager (IManager)
 - DisasterManager (Manager, ISupplyManager, IManager)
 - JobManager (Manager, ISupplyManager, IManager)
 - SupplyManager (Manager, ISupplyManager, IManager)
@@ -141,14 +145,12 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 	- Edit (DisasterViewModel)
 	- Index (IEnumerable&lt;Disaster&gt;)
 	- Delete (Disaster)
-	
 - JobContoller (Contoller)
 	- Create (JobViewModel)
 	- Details (Job)
 	- Edit (JobViewModel)
 	- Index (IEnumerable&lt;Job&gt;)
 	- Delete (Job)
-	
 - SupplyContoller (Contoller)
 	- Create (SupplyViewModel)
 	- Details (Supply)
