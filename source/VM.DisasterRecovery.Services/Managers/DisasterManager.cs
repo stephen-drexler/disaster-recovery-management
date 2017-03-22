@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using VM.DisasterRecovery.Common.Models;
 using VM.DisasterRecovery.Domain.Contracts;
 using VM.DisasterRecovery.Domain.Models;
 using VM.DisasterRecovery.Persistence.Contracts;
 using VM.DisasterRecovery.Persistence.Repositories;
+using VM.DisasterRecovery.Services.Managers.Abstract;
 
-namespace VM.DisasterRecovery.Services
+namespace VM.DisasterRecovery.Services.Managers
 {
     public class DisasterManager : Manager<Disaster, DisasterRepository>, IDisasterManager
     {

@@ -135,9 +135,23 @@ Disaster Recovery Management will consist of a 5 tier architecture to maintain s
 
 #### Management (area)
 
-- Disaster (Contoller)
-	- Create
-	- Details
-	- Edit
-	- Index
-	- Delete
+- DisasterContoller (Contoller)
+	- Create (DisasterViewModel)
+	- Details (Disaster)
+	- Edit (DisasterViewModel)
+	- Index (IEnumerable&lt;Disaster&gt;)
+	- Delete (Disaster)
+	
+- JobContoller (Contoller)
+	- Create (JobViewModel)
+	- Details (Job)
+	- Edit (JobViewModel)
+	- Index (IEnumerable&lt;Job&gt;)
+	- Delete (Job)
+	
+- SupplyContoller (Contoller)
+	- Create (SupplyViewModel)
+	- Details (Supply)
+	- Edit (SupplyViewModel)
+	- Index (IEnumerable&lt;Supply&gt;)
+	- Delete (Supply)

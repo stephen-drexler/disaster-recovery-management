@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using System.Collections.Generic;
 using VM.DisasterRecovery.Common.Models;
 using VM.DisasterRecovery.Domain.Contracts;
 using VM.DisasterRecovery.Persistence.Contracts;
 
-namespace VM.DisasterRecovery.Services
+namespace VM.DisasterRecovery.Services.Managers.Abstract
 {
     public abstract class Manager<TEntity, TRepository> : IManager<TEntity> 
         where TEntity : class, IUpdate<TEntity>, IUniqueIdentity

@@ -71,7 +71,7 @@ namespace VM.DisasterRecovery.Domain.Models
 
         public void Delete()
         {
-            Deleted = false;
+            Deleted = true;
         }
 
         private void Publish(bool publish)

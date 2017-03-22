@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DisasterManager.cs" />
-    <Compile Include="JobManager.cs" />
-    <Compile Include="Manager.cs" />
+    <Compile Include="Managers\DisasterManager.cs" />
+    <Compile Include="Managers\JobManager.cs" />
+    <Compile Include="Managers\Abstract\Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupplyManager.cs" />
+    <Compile Include="Managers\SupplyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VM.DisasterRecovery.Common\VM.DisasterRecovery.Common.csproj">

@@ -1,9 +1,11 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using VM.DisasterRecovery.Domain.Models;
 
 namespace VM.DisasterRecovery.Web.Areas.Management.Models
 {
+    [Bind(Include = "Id, Title, Summary, Content, Location, SmallImageUrl, LargeImageUrl, AlternateImageText, EstimatedExpense, Published")]
     public class DisasterViewModel
     {
         public int Id { get; set; }
@@ -66,6 +68,7 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Models
         public Disaster ConvertToDisaster()
         {
             var disaster = new Disaster();
+            disaster.Id = Id;
             disaster.Title = Title;
             disaster.Summary = Summary;
             disaster.Content = Content;

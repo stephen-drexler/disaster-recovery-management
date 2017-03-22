@@ -1,26 +1,32 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using VM.DisasterRecovery.Common.Models;
 using VM.DisasterRecovery.Domain.Models;
 using VM.DisasterRecovery.Persistence;
+using VM.DisasterRecovery.Persistence.Context;
 using VM.DisasterRecovery.Persistence.Contracts;
 using VM.DisasterRecovery.Services.Managers;
 using VM.DisasterRecovery.Web.Areas.Management.Models;
 
 namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
 {
-    public class DisasterController : Controller
+    public class SupplyController : Controller
     {
-        private readonly DisasterManager _manager;
+        private readonly SupplyManager _manager;
 
-        public DisasterController() 
+        public SupplyController() 
             : this (UnitOfWork.Initialize()) { }
 
-        public DisasterController(IUnitOfWork unitOfWork) 
-            : this(DisasterManager.Initialize(unitOfWork)) { }
+        public SupplyController(IUnitOfWork unitOfWork) 
+            : this(SupplyManager.Initialize(unitOfWork)) { }
 
-        public DisasterController(DisasterManager manager)
+        public SupplyController(SupplyManager manager)
         {
             _manager = manager;
         }
@@ -41,7 +47,7 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
 
             var model = _manager.Get(id.Value);
 
-            if (model == null || model.Deleted)
+            if (model == null)
                 return HttpNotFound();
 
             return View(model);
@@ -51,7 +57,7 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            DisasterViewModel model = DisasterViewModel.Initialize();
+            var model = SupplyViewModel.Initialize();
             return View(model);
         }
 
@@ -59,13 +65,13 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DisasterViewModel model)
+        public ActionResult Create(SupplyViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            var disaster = model.ConvertToDisaster();
-            OperationResult result = _manager.Create(disaster);
+            var supply = model.ConvertToSupply();
+            OperationResult result = _manager.Create(supply);
 
             if (!result.Success)
             {
@@ -73,7 +79,7 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
                 return View(model); ;
             }
 
-            return RedirectToAction("Details", new {id = disaster.Id});
+            return RedirectToAction("Details", new { id = supply.Id });
         }
 
         // GET: Management/Disaster/Edit/5
@@ -83,26 +89,28 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
             if (!id.HasValue)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var disaster = _manager.Get(id.Value);
+            var supply = _manager.Get(id.Value);
 
-            if (disaster == null || disaster.Deleted)
+            if (supply == null)
                 return HttpNotFound();
-            
-            var model = DisasterViewModel.Initialize(disaster);
-            
+
+            var model = SupplyViewModel.Initialize(supply);
+
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(DisasterViewModel model)
+        public ActionResult Edit(SupplyViewModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            var disaster = model.ConvertToDisaster();
+            var supply = model.ConvertToSupply();
 
-            OperationResult result = _manager.Edit(disaster);
+            _manager.Edit(supply);
+
+            OperationResult result = _manager.Edit(supply);
 
             if (!result.Success)
             {
@@ -110,7 +118,7 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Details", new { id = disaster.Id });
+            return RedirectToAction("Details", new { id = supply.Id });
         }
 
         // GET: Management/Disaster/Delete/5
@@ -120,12 +128,12 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
             if (!id.HasValue)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var disaster = _manager.Get(id.Value);
+            var supply = _manager.Get(id.Value);
 
-            if (disaster == null || disaster.Deleted)
+            if (supply == null)
                 return HttpNotFound();
 
-            return View(disaster);
+            return View(supply);
         }
 
         // POST: Management/Disaster/Delete/5
@@ -133,9 +141,9 @@ namespace VM.DisasterRecovery.Web.Areas.Management.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var disaster = _manager.Get(id);
+            var supply = _manager.Get(id);
 
-            _manager.Delete(disaster);
+            _manager.Delete(supply);
 
             return RedirectToAction("Index");
         }

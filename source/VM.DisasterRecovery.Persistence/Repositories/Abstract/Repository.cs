@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Linq.Expressions;
-using VM.DisasterRecovery.Common.Models;
 using VM.DisasterRecovery.Domain.Contracts;
 using VM.DisasterRecovery.Persistence.Context;
 
-namespace VM.DisasterRecovery.Persistence.Repositories
+namespace VM.DisasterRecovery.Persistence.Repositories.Abstract
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
+    public abstract class Repository<TEntity> : IRepository<TEntity> 
+        where TEntity : class, new()
     {
         protected readonly DbSet<TEntity> DataSet;
 
@@ -21,7 +20,7 @@ namespace VM.DisasterRecovery.Persistence.Repositories
 
         public virtual TEntity Get(int id)
         {
-            return DataSet?.Find(id) ?? new TEntity();
+            return DataSet?.Find(id);
         }
 
         public virtual IEnumerable<TEntity> GetAll()
